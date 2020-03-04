@@ -6,8 +6,8 @@ Website for soccer Fans to get info about their favorite soccer leagues and team
 
 ### Wireframes
 
-* [Wireframe Soccer Fans Main Screen] https://wireframe.cc/dfSiFn
-* [Wireframe Soccer Team Listing Screen] https://wireframe.cc/FH3bKo
+* [Wireframe Soccer Fans Main Screen] (https://wireframe.cc/dfSiFn)
+* [Wireframe Soccer Team Listing Screen] (https://wireframe.cc/FH3bKo)
 
 ### React Architecture
 
@@ -42,9 +42,9 @@ WIP. State and props still being defined.
 
 ### API Links
 
-* [Link to soccer API!] https://www.thesportsdb.com/api.php
-* [Link to France League Page] https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?s=Soccer&c=france
-* [Link to France League One] https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=French%20Ligue%201
+* [Link to soccer API!] (https://www.thesportsdb.com/api.php)
+* [Link to France League Page] (https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?s=Soccer&c=france)
+* [Link to France League One] (https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=French%20Ligue%201)
 
 ### MVP and POST MVP
 
