@@ -12,6 +12,7 @@ Website for soccer Fans to get info about their favorite soccer leagues and team
 ### React Architecture
 
 WIP. State and props still being defined.
+* [Components Architecture](https://wireframe.cc/WyubQk)
 
 
 ### Potential Major Problems

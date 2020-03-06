@@ -4,12 +4,13 @@
 * League ID or Name to render on sidebar and Nav
 * Main page true/flase
 * (hide shows – team listing button)
-* (strLogo to be passed to teams)
 
-### API Call - Input Files
+### API Call - Input Files - Props
 * SoccerLeagues.JSON
 * [Individual League Info api](https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4334)
 * [League Teams Listing Info api](https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=French%20Ligue%201)
+
+* (strLogo to be passed to teams)
 
 ### App Info Header
 

@@ -1,0 +1,70 @@
+{
+"leagues": [
+{
+"idLeague": "4328",
+"strLeague": "English Premier League",
+"strSport": "Soccer",
+"strLeagueAlternate": "Premier League"
+},
+{
+"idLeague": "4331",
+"strLeague": "German Bundesliga",
+"strSport": "Soccer",
+"strLeagueAlternate": "Bundesliga, Fußball-Bundesliga"
+},
+{
+"idLeague": "4332",
+"strLeague": "Italian Serie A",
+"strSport": "Soccer",
+"strLeagueAlternate": "Serie A"
+},
+{
+"idLeague": "4334",
+"strLeague": "French Ligue 1",
+"strSport": "Soccer",
+"strLeagueAlternate": ""
+},
+{
+"idLeague": "4335",
+"strLeague": "Spanish La Liga",
+"strSport": "Soccer",
+"strLeagueAlternate": "La Liga Santander"
+},
+{
+"idLeague": "4336",
+"strLeague": "Greek Superleague Greece",
+"strSport": "Soccer",
+"strLeagueAlternate": ""
+},
+{
+"idLeague": "4337",
+"strLeague": "Dutch Eredivisie",
+"strSport": "Soccer",
+"strLeagueAlternate": ""
+},
+{
+"idLeague": "4338",
+"strLeague": "Belgian Jupiler League",
+"strSport": "Soccer",
+"strLeagueAlternate": "Jupiler Pro League"
+},
+{
+"idLeague": "4339",
+"strLeague": "Turkish Super Lig",
+"strSport": "Soccer",
+"strLeagueAlternate": "Super Lig"
+},
+{
+"idLeague": "4340",
+"strLeague": "Danish Superliga",
+"strSport": "Soccer",
+"strLeagueAlternate": ""
+},
+{
+"idLeague": "4344",
+"strLeague": "Portuguese Primeira Liga",
+"strSport": "Soccer",
+"strLeagueAlternate": "Liga NOS"
+}
+]
+}
