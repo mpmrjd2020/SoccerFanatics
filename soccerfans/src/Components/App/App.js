@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import axios from 'axios';
-import './App.css';
-import SoccerLeagues from './SoccerLeagues';
-import LeagueSidebar from './LeagueSidebar'
-import AppHome from './AppHome'
+import '../../App.css';
+import SoccerLeagues from '../../SoccerLeagues';
+import LeagueSidebar from '../../LeagueSidebar'
+import AppHome from '../../AppHome'
+import AppBanner from '../../AppBanner'
 
 class App extends Component{
   constructor(props){
@@ -91,10 +92,13 @@ class App extends Component{
               <button>Competitions</button>
               <button>About</button>
             </nav> */}
+            <Link to="/">
+            </Link>
           </Link>
+
         </header>
         <div className='Banner-area'>
-
+          <Route path="/"  component={AppBanner}/>
         </div>
         <section className='Soccer-details'>
           <main className='Display-detail-area'>
