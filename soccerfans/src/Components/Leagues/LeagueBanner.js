@@ -1,13 +1,14 @@
 import React from 'react'
 
-function AppBanner() {
+function LeagueBanner(props) {
+
 
     return(
         <div className='Banner-area'>
-            I AM THE APP BANNER
+            1
         </div>
-    )
 
+    )
 }
 
-export default AppBanner
+export default LeagueBanner

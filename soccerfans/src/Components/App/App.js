@@ -3,9 +3,11 @@ import { Route, Link, Switch } from 'react-router-dom';
 import axios from 'axios';
 import '../../App.css';
 import SoccerLeagues from '../../SoccerLeagues';
-import LeagueSidebar from '../../LeagueSidebar'
-import AppHome from '../../AppHome'
-import AppBanner from '../../AppBanner'
+import LeagueSidebar from '../Leagues/LeagueSidebar';
+import Home from '../../Home';
+import AppBanner from '../../AppBanner';
+import TeamInfo from '../Teams/TeamInfo';
+import LeagueBanner from '../Leagues/LeagueBanner'
 
 class App extends Component{
   constructor(props){
@@ -18,8 +20,9 @@ class App extends Component{
     
     }
 
-    this.getTeamInfo = this.getTeamInfo.bind(this)
-    this.getTeamInfoData = this.getTeamInfoData.bind(this)
+    this.setTeam = this.setTeam.bind(this)
+    // this.getTeamInfo = this.getTeamInfo.bind(this)
+    // this.getTeamInfoData = this.getTeamInfoData.bind(this)
 
   }
 
@@ -40,49 +43,53 @@ class App extends Component{
     })
     .then(
       response => {
-        console.log('response', response)
-        this.state.leaguesData.push(response.data.leagues[0])
+        // console.log('response', response)
+        // this.state.leaguesData.push(response.data.leagues[0])
         // this.setState({leaguesData: response.data.leagues});
-        this.setState({leaguesData: this.state.leaguesData})
-         console.log('Array of leagues', this.state.leaguesData)
+          this.setState({leaguesData: [...this.state.leaguesData, response.data.leagues[0]]})
+        //  console.log('Array of leagues', this.state.leaguesData)
       })
     .catch(error => {
       console.log(error)
     })
   }
 
-  getTeamInfo() {
-    this.state.competitionsList.map(leagueNm => {
-      return (
-              this.getTeamInfoData(leagueNm.strLeague)
-      )
-    })
+  setTeam(teamName) {
+    this.setState({ leaguesTeamList: teamName })
   }
 
-  getTeamInfoData(leagueName) {
-    axios({
-      method: 'get',
-      url: `https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=${leagueName}`,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(
-      response => {
-        this.state.leaguesTeamList.push(response.data.teams)
-        // console.log('response', response)
-        // console.log('Array of teams', this.state.leaguesTeamList)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+  // getTeamInfo() {
+  //   this.state.competitionsList.map(leagueNm => {
+  //     return (
+  //             this.getTeamInfoData(leagueNm.strLeague)
+  //     )
+  //   })
+  // }
+
+  // getTeamInfoData(leagueName) {
+  //   axios({
+  //     method: 'get',
+  //     url: `https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=${leagueName}`,
+  //     headers: { 'Accept': 'application/json' }
+  //   })
+  //   .then(
+  //     response => {
+  //       this.state.leaguesTeamList.push(response.data.teams)
+  //       // console.log('response', response)
+  //       // console.log('Array of teams', this.state.leaguesTeamList)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   componentDidMount() {
     this.getLeagueInfo()
-    this.getTeamInfo()
+    // this.getTeamInfo()
   }
 
   render() {
-    console.log('Competition listing', this.state.competitionsList)
+    // console.log('Competition listing', this.state.competitionsList)
     return (
       <div className="App">
         <header className="App-header">
@@ -92,21 +99,24 @@ class App extends Component{
               <button>Competitions</button>
               <button>About</button>
             </nav> */}
-            <Link to="/">
-            </Link>
           </Link>
-
+          {/* <Link to="/">
+            </Link> */}
         </header>
-        <div className='Banner-area'>
+        {/* <div>
           <Route path="/"  component={AppBanner}/>
-        </div>
+        </div> */}
         <section className='Soccer-details'>
           <main className='Display-detail-area'>
-            <Route exact path="/" component={AppHome} />
+            <Route exact path="/"  component={AppBanner}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/TeamInfo/:leagueName" component={LeagueBanner}/>
+            {/* <Route path='/TeamInfo/:leagueName' component={TeamInfo} /> */}
+            <Route path="/TeamInfo/:leagueName" render={routerProps => <TeamInfo setTeam={this.setTeam} {...routerProps} {...this.state}/>} />
           </main>
           <div className='League-sidebar'>
             League sidebar
-            <LeagueSidebar leagueInfo={this.state.leaguesData} />
+            <LeagueSidebar leagueInfo={this.state.leaguesData} competitionInfo={this.state.competitionsList}/>
           </div>
         </section>
       </div>

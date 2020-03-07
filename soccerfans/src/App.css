@@ -84,3 +84,15 @@
    /* width: 50; */
    flex: 0 0 40px; 
  }
+
+ .Team-image-data {
+  height: 200px;
+  width: 200px;
+ }
+
+ #Li-league {
+  padding: 5px;
+  /* width: 150; */
+  flex: 0 0 140px; 
+  border: 1px solid black;
+ }
