@@ -5,9 +5,10 @@ import '../../App.css';
 import SoccerLeagues from '../../SoccerLeagues';
 import LeagueSidebar from '../Leagues/LeagueSidebar';
 import Home from '../../Home';
-import AppBanner from '../../AppBanner';
+import AppBanner from './AppBanner';
 import TeamInfo from '../Teams/TeamInfo';
-import LeagueBanner from '../Leagues/LeagueBanner'
+import LeagueBanner from '../Leagues/LeagueBanner';
+import TeamDetails from '../Teams/TeamDetails';
 
 class App extends Component{
   constructor(props){
@@ -16,10 +17,10 @@ class App extends Component{
     this.state = {
       competitionsList: SoccerLeagues.leagues,
       leaguesData: [],
-      leaguesTeamList: []
-    
+      leaguesTeamList: [],
+      leagueBanner: ' 1'
     }
-
+    this._isMounted = false;
     this.setTeam = this.setTeam.bind(this)
     // this.getTeamInfo = this.getTeamInfo.bind(this)
     // this.getTeamInfoData = this.getTeamInfoData.bind(this)
@@ -58,6 +59,12 @@ class App extends Component{
     this.setState({ leaguesTeamList: teamName })
   }
 
+  setLeagueBanner(leagueBanderole) {
+    
+    this._isMounted && this.setState({ leagueBanner: leagueBanderole })
+    // console.log('I am in set league banner', leagueBanderole)
+  }
+
   // getTeamInfo() {
   //   this.state.competitionsList.map(leagueNm => {
   //     return (
@@ -84,12 +91,18 @@ class App extends Component{
   // }
 
   componentDidMount() {
-    this.getLeagueInfo()
+    this._isMounted = true;
+    this._isMounted && this.getLeagueInfo()
     // this.getTeamInfo()
   }
 
+  componentWillUnmount() {
+    this._isMounted = false;
+ }
+
   render() {
     // console.log('Competition listing', this.state.competitionsList)
+    // console.log('this.state.leagueBanner', this.state.leagueBanner)
     return (
       <div className="App">
         <header className="App-header">
@@ -110,13 +123,14 @@ class App extends Component{
           <main className='Display-detail-area'>
             <Route exact path="/"  component={AppBanner}/>
             <Route exact path="/" component={Home}/>
-            <Route path="/TeamInfo/:leagueName" component={LeagueBanner}/>
+            <Route exact path="/TeamInfo/:leagueName" render={routerProps => <LeagueBanner {...this.state}/>} />
             {/* <Route path='/TeamInfo/:leagueName' component={TeamInfo} /> */}
-            <Route path="/TeamInfo/:leagueName" render={routerProps => <TeamInfo setTeam={this.setTeam} {...routerProps} {...this.state}/>} />
+            <Route exact path="/TeamInfo/:leagueName" render={routerProps => <TeamInfo setTeam={this.setTeam} {...routerProps} {...this.state}/>} />
+            <Route exact path="/TeamDetails/:teamName" render={routerProps => <TeamDetails {...routerProps} {...this.state}/>} />
           </main>
           <div className='League-sidebar'>
             League sidebar
-            <LeagueSidebar leagueInfo={this.state.leaguesData} competitionInfo={this.state.competitionsList}/>
+            <LeagueSidebar leagueInfo={this.state.leaguesData} competitionInfo={this.state.competitionsList} setLeagueBanner={this.setLeagueBanner}/>
           </div>
         </section>
       </div>

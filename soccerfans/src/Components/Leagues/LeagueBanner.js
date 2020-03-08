@@ -1,11 +1,11 @@
 import React from 'react'
 
 function LeagueBanner(props) {
-
+    console.log('leaguebanner', props.leaguesData)
 
     return(
         <div className='Banner-area'>
-            1
+            <img src={props.leaguesData[0].strBanner} className='LeagueBanner'/>
         </div>
 
     )
