@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Home extends Component {
-    render() {
+function Home() {
+
         return (
             <div>
                 <h1>Welcome to soccer fanatics!</h1>
                 <p>This is a great resource to find information about the following European soccer leagues:</p>
-                <ul>
+                <ul className='Home-list'>
                     <li>English Premier League</li>
                     <li>German Bundesliga</li>
                     <li>Italian Serie A</li>
@@ -22,8 +22,6 @@ class Home extends Component {
                 <p>Just press the logo of the league on the sidebar and enjoy your soccer adventure.</p>
             </div>
         )
-
-    }
 
 }
 

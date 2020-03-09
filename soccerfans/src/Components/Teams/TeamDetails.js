@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Route } from 'react-router'
 
-function TeamDetails(props) {
 
-    console.log(props)
+class TeamDetails extends Component {
+    constructor(props){
+    super()
 
-    return(
-        0
-    )
+    }
+
+    render() {
+        console.log(this.props)
+
+        return(
+            0
+        )
+    }
 
 }
 

@@ -19,6 +19,7 @@ class App extends Component{
       leaguesData: [],
       leaguesTeamList: [],
       leagueBanner: ' 1'
+
     }
     this._isMounted = false;
     this.setTeam = this.setTeam.bind(this)
@@ -123,7 +124,7 @@ class App extends Component{
           <main className='Display-detail-area'>
             <Route exact path="/"  component={AppBanner}/>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/TeamInfo/:leagueName" render={routerProps => <LeagueBanner {...this.state}/>} />
+            <Route exact path="/TeamInfo/:leagueName" render={routerProps => <LeagueBanner {...routerProps} {...this.state}/>} />
             {/* <Route path='/TeamInfo/:leagueName' component={TeamInfo} /> */}
             <Route exact path="/TeamInfo/:leagueName" render={routerProps => <TeamInfo setTeam={this.setTeam} {...routerProps} {...this.state}/>} />
             <Route exact path="/TeamDetails/:teamName" render={routerProps => <TeamDetails {...routerProps} {...this.state}/>} />
