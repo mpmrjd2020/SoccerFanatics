@@ -4,42 +4,21 @@
   flex-direction: column;
 
 }
-/* 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #7c8496;
   min-height: 20vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
   font-size: 20px;
-  color: white;
 }
 
 .App-link {
   color: #61dafb;
 }
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 .Soccer-details {
   display: flex;
@@ -53,6 +32,21 @@
   justify-content: center;
 }
 
+#App-banner {
+  background: none;
+  position: relative;
+  animation: mymove 5s infinite;
+  justify-content: left;
+  font-size: 50px;
+  font-style: oblique;
+  text-shadow: 0 0 3px #000000, 0 0 5px #6a0dad;
+}
+
+@keyframes mymove {
+  from {left: -150px;}
+  to {left: 150px;}
+}
+
 .Home-list {
   list-style: none;
 }
@@ -64,12 +58,15 @@
 
 .Soccer-details {
   display: flex;
-  /* height: 1500px; */
 }
 
 .Display-detail-area {
   width: 80%;
   background-color: antiquewhite;
+}
+
+#Sidebar-label {
+  font-size: 25px;
 }
 
 .League-sidebar {
@@ -86,7 +83,7 @@
 .League-icons {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #7c8496;
   margin: 5px;
   border-radius: 5px;
 
@@ -94,54 +91,48 @@
 
 #Li-league {
   padding: 5px;
-  /* width: 150; */
-  /* flex: 0 0 10px;  */
-  border: 1px solid black;
- }
+  border: 1px solid #7c8496;
+  color: white;
+  background-color: #7c8496;
+}
  
- #Li-country {
-   padding: 5px;
-   color: white;
-   background-color: black;
-   /* width: 50; */
-   /* flex: 0 0 40px;  */
- }
+#Li-country {
+  padding: 5px;
+  color: white;
+  background-color: #7c8496;
+}
 
- .Team-image-data {
+.Team-image-data {
   height: 200px;
   width: 200px;
- }
+}
 
- #Li-league {
-  padding: 5px;
-  /* width: 150; */
-  /* flex: 0 0 140px;  */
-  border: 1px solid black;
- }
-
- .Team-container {
+.Team-container {
   display: flex;
-  /* width: 900px; */
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  /* border-top: 2px solid rgb(148, 165, 165); */
   margin: 25px;
- }
- .Teams-icons {
-  border: 2px solid rgb(148, 165, 165); 
+}
+
+.Teams-icons {
+  border: 2px solid #7c8496; 
   border-radius: 5px;
   margin: 10px;
- }
+}
 
- .Team-image-data {
-  border-bottom: 2px solid rgb(148, 165, 165); 
+.Team-image-data {
   padding: 10px;
- }
+}
 
- #Ti-team {
-  /* border-top: 2px solid rgb(148, 165, 165);  */
+#Ti-team {
   padding: 10px;
   color: white;
-  background-color: rgb(148, 165, 165);
- }
+  background-color: #7c8496;
+}
+
+#Ti-country {
+  padding: 10px;
+  color: white;
+  background-color: #7c8496;
+}
